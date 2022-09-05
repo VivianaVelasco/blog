@@ -1,0 +1,14 @@
+<app-header [title]="title_categories"></app-header>
+<div class="py-3 w-75 mx-auto">
+    <select name="selectValue" class="form-select" (change)="onChangeSelect($event)">
+        <option value="eligeunacategoria" selected>Elige Una Categoria</option>
+        <option *ngFor="let category of categories" value="{{category.nombre}}">{{category.nombre}}</option>
+    </select>
+</div>
+<div class="py-3 container">
+    <div *ngIf="posts.length < 1" class="alert alert-primary text-center" role="alert">
+        No hay Posts de esa Categoria. :(
+      </div>
+    <app-post *ngFor="let post of posts" [post]="post">
+    </app-post>
+</div>

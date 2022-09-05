@@ -1,0 +1,10 @@
+<div class="container full">
+  <app-header [title]="title"></app-header>
+  <div class="container">
+  </div>
+  <div class="py-5 container d-flex flex-column justify-content-between align-items-center">
+    <p *ngIf="myPosts.length < 1" class="fs-1 fw-bolder micolor">Sin Post</p>
+    <app-post *ngFor="let mypost of myPosts" [post]="mypost">
+    </app-post>
+  </div>
+</div>
